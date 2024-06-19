@@ -85,12 +85,19 @@ def __persist_db(writer, args):
 
 
 def __persist_file(writer, args):
-    package_name = writer.getInf("package_name")
-    signature_unique_analyze = writer.getInf("signature_unique_analyze")
+    # package_name = writer.getInf("package_name")
+    # signature_unique_analyze = writer.getInf("signature_unique_analyze")
 
-    if package_name and signature_unique_analyze:
-        return writer.save_result_to_file(
-            os.path.join(args.report_output_dir, package_name + "_" + signature_unique_analyze + ".txt"), args)
-    else:
-        print("\"package_name\" or \"signature_unique_analyze\" not exist.")
-        return False
+    # if package_name and signature_unique_analyze:
+    #     return writer.save_result_to_file(
+    #         os.path.join(args.report_output_dir, package_name + "_" + signature_unique_analyze + ".txt"), args)
+    # else:
+    #     print("\"package_name\" or \"signature_unique_analyze\" not exist.")
+    #     return False
+    return writer.save_result_to_file(
+        os.path.join(
+            args.report_output_dir,
+            "report.txt"
+        ),
+        args
+    )
